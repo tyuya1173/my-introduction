@@ -2,10 +2,10 @@ const path = require("path");
 const nodeExternals = require("webpack-node-externals");
 
 module.exports = {
-  mode: "development",
-  entry: "./server/index.ts", // TypeScript のエントリーポイント
+  mode: "development", // "production" に変更すると最適化
+  entry: "./server/index.ts",
   target: "node",
-  externals: [nodeExternals()], // node_modules をバンドルから除外
+  externals: [nodeExternals()],
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "server.js",
@@ -19,6 +19,10 @@ module.exports = {
         test: /\.tsx?$/,
         use: "ts-loader",
         exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
       },
     ],
   },
