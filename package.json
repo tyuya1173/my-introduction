@@ -16,16 +16,17 @@
     "start": "node dist/server.js"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.26.10",
     "@babel/preset-env": "^7.26.9",
     "@babel/preset-react": "^7.26.3",
-    "@babel/preset-typescript": "^7.26.0",
+    "@babel/preset-typescript": "^7.27.0",
     "@eslint/js": "^9.21.0",
-    "@types/express": "^5.0.0",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.14.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
