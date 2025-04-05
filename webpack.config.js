@@ -2,30 +2,26 @@ const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  entry: './server/index.ts', // ←サーバーのエントリーポイント
+  entry: './server/index.ts',
   target: 'node',
   externals: [nodeExternals()],
-  mode: 'development',
   output: {
-    filename: 'server.js',
     path: path.resolve(__dirname, 'dist'),
+    filename: 'server.js',
   },
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: ['.ts', '.tsx', '.js'],
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: [
-          {
-            loader: 'babel-loader',
-          },
-          {
-            loader: 'ts-loader',
-          }
-        ],
+        use: ['babel-loader', 'ts-loader'],
         exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
